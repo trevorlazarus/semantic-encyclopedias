@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# Semantic Encyclopedias
+
+These slides were created by [Trevor Lazarus](http://trevorlazar.us/sem-enc) while at [Newgen](http://newgen.co)
+
+---
+
+## Resource Description Framework
+
+* Representing things  as **Facts** to _infer_ new **Facts**
+ * Fact 1:
+              https://www.linkedin.com/in/srivatsan-hari-28aaa53/
+
+              http://schema.org/worksFor http://newgen.co
+ * Fact 2:
+              http://trevorlazar.us
+
+              http://schema.org/worksFor http://newgen.co
+ * Inferred Fact:
+              https://www.linkedin.com/in/srivatsan-hari-28aaa53/
+
+              http://schema.org/colleague  http://trevorlazar.us
+---
+
+## Formatted Text
+* Content
+   * Given in word documents or PDFs
+   * Encyclopedia entries [A through Z] contributed by various authors
+   * Glossary
+   * Appendix
+      * Romance Fiction about William Shakespeare
+      * Mystery Fiction about William Shakespeare
+      * Timeline of Shakespeare’s Life
+      * Fantasy and Science Fiction Related to William
+      * Children’s and Young Adult Books about William Shakespeare
+      * Fantasy and Science Fiction Related to Shakespeare in
+TV and Film
+      * Map of Places in the Historical Plays **(Empty!)**
+      * Notable Films and Television Productions of
+Shakespeare’s Works
+     * Selected List of Online Shakespeare Resources
+     * Genealogy of Royalty, [Years]
+   * Selected Bibliography
+   * Headword list with some annotations
+  * About the Editor and Contributors
+
+---
+
+## From formatted Word/PDF to RDF
+
+* Extract text and content metadata
+  * Extract and match headwords to the entry and authors based on formatting or based on positioning.
+
+* Create identifiers for entries, authors, etc.
+
+* Create triples linking Authors to their entries, etc.
+
+* Grounding of Appendix and selected bibliography to existing LOD cloud _**(Important)**_
+
+* Extracting Temporal Data.
+* Extracting Spatial Data
+
+* Named Entity Recognition
+* Topic Modelling **_(Not in Budget)_**
+
+---
+
+## Infrastructure
+* Customer might either want to host it on their own servers or with one of the cloud providers(AWS, Google, Azure, etc.)
+ * Would need to check requirments if it's on premise, Debian-like OS, Java, php, MySQL, etc.
+* Setup and load facts into a SPARQL endpoint
+ * Fuseki, Dereferencing interface, staging environments, settle on the domain name.
+* Setup Robust installation of Drupal 8 on our staging environment:
+ * Reverse Proxy and HTTP caching layer - Varnish
+ * NGINX Webserver
+ * MariaDB/Postgres Database server
+ * php7 with necessary modules
+ * Docker with nodejs container
+* Content Enhancement Engine
+ * Apache Stanbol with chained content enhancers
+* Create Roles and a Permissions matrix for various users of the site:
+ * EiC, Assistant Editors, Editorial Board Members, Guest Editors, Reviewers, Authors, etc.
+---
+## Theming
+
+ * Create Drupal Theme to match chosen design
+  * Designer to show a few possible layouts
+  * Customer to pick one.
+  * HTML/CSS created to match the Design
+  * Drupal Theme created using HTML/CSS from previous step
+---
+
+## Semantic Components
+ * Geospatial:
+  * Leaflet Tiles to match elizabethan era
+  * Responsive container that can be placed whereever it makes sense.
+
+ * Temporal Components
+  * Timeline
+
+ * Spatio-Temporal Components
+  * Events linked to Places
+  * Space and Time in context
+
+ * Thematic Components
+  * Identify various themes related to the Encyclopedia
+  *
+  
+---
+## Semantic Content Editing Workflow:
+
+ * Auto-recommended Tagging using Content Enhancement Engine
+
+
+</textarea>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+
