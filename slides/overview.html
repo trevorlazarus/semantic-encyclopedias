@@ -25,7 +25,19 @@ class: center, middle
 These slides were created by [Trevor Lazarus](http://trevorlazar.us/sem-enc) while at [Newgen](http://newgen.co)
 
 ---
+### Resource Description Framework
+* RDF Language
+  * Language for **representing data** on the Semantic Web
+  * Language for expressing **simple statements** of the form subject-predicate-object(aka Binary Predicates)
+  * Gives us the capability to perform **inference on statements**
+  * Flexible data model, no worries if the schema changes!
 
+* RDF Data Model
+  * The data model in RDF is a **graph data model**
+  * An edge with two connecting nodes forms a **triple**
+  .left[![Right-aligned image](https://objectcomputing.com/files/7214/3777/2560/triples.gif)]
+
+---
 ## Resource Description Framework
 
 * Representing things  as **Facts** to _infer_ new **Facts**
@@ -60,11 +72,14 @@ TV and Film
       * Notable Films and Television Productions of
 Shakespeare’s Works
      * Selected List of Online Shakespeare Resources
-     * Genealogy of Royalty, [Years]
+     * Genealogy of Royalty
    * Selected Bibliography
    * Headword list with some annotations
   * About the Editor and Contributors
+---
 
+## Dissecting an Entry
+.left[![Right-aligned image](https://github.com/trevorlazarus/semantic-encyclopedias/raw/master/slides/annotated_a.png)]
 ---
 
 ## From formatted Word/PDF to RDF
@@ -126,11 +141,20 @@ Shakespeare’s Works
  * Thematic Components
   * Identify various themes related to the Encyclopedia
   *
-  
+
 ---
 ## Semantic Content Editing Workflow:
+* Auto-recommended Tagging using Content Enhancement Engine
+ * Recommends Tags based on content entered by the Authors
+ * Authors can choose from the list of Tags
+.left[![Right-aligned image](https://www.drupal.org/files/auto_recommended_tags.gif)]
+* Tags are automatically grounded to URIs(Concepts, Entities, etc.) within the Knowledge graph
+* Content along with Tags is automatically entered as a node and the extracted facts as triples to the SPARQL endpoint
+---
+##
 
- * Auto-recommended Tagging using Content Enhancement Engine
+
+
 
 
 </textarea>
@@ -151,4 +175,3 @@ Shakespeare’s Works
     </script>
   </body>
 </html>
-
